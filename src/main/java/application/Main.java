@@ -1,20 +1,25 @@
 package application;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
-import scenes.Home;
+import controllers.MainController;
 
-import java.io.IOException;
+import javax.swing.*;
 
-public class Main extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-
-        new Home(stage);
-
-    }
+public class Main {
 
     public static void main(String[] args) {
-        launch();
+
+        try {
+
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+                 | UnsupportedLookAndFeelException e) {
+
+            e.printStackTrace();
+
+        }
+
+        new MainController();
+
     }
 }
